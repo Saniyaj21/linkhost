@@ -1,0 +1,71 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>linkSaver</title>
+    <style>
+        body{
+            max-width: 425px;
+            margin: auto;
+            display: block;
+           
+        }
+       
+        .mobile{
+            position: relative;
+            display: block;
+            width: 425px;
+            margin: auto;
+            border: 1px solid green;
+            padding: 3px;
+            height: 90vh;
+            border-radius: 5px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile">
+    {% comment %} navbar {% endcomment %}
+    <div class="navbar">navbar {{user.username|upper}}
+
+
+    {% if request.user.is_authenticated %}
+
+                    <a href="{% url 'logout' %}" id="colMenuLink">
+                        <button>Log Out</button>
+                    </a>
+                    {% else %}
+
+                    <a href="{% url 'login' %}" id="colMenuLink">
+                        <button>Log In</button>
+                    </a>
+                    {%endif %}
+
+                </div>
+
+                
+                <form action="" method="GET">
+                    {% csrf_token %}
+                    <input type="text" name="q">
+                    <input type="submit" value="Search">
+                </form>
+
+
+                    {% for message  in messages %}
+                    {{message}}
+                    {% endfor %}
+                    
+
+                        {% block body%}
+                        {% endblock body%}
+                    </div>
+</body>
+</html>

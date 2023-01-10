@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --mainYellow: #FDF2B9;
+    --mainOrange: #FF5722;
+    --mainGradient: linear-gradient(180deg, #FF8A66, #FF7144);
+    --HoverGradient: linear-gradient(180deg, #FF7144, #FF8A66);
+    --backgroundColor: #e8e6e6;
+    --txtclr: #f0f0f0;
+    --plccolor: #ff966f;
+    --linkUrlColor: #aaa5a5;
+    --lightOrange: #fd7442;
+    --transparentOrange: rgba(254, 185, 159, 0.89);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+::placeholder {
+    color: var(--plccolor) !important;
+    background-color: transparent;
+    font-weight: 500 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+*::selection {
+    color: #fafafa !important;
+    background-color: var(--mainOrange) !important;
+}
+
+
+::-webkit-scrollbar {
+    width: .75vw;
+    background: var(--mainYellow);
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid var(--mainYellow);
+    background: var(--mainGradient);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mainOrange);
+}
+
+
+
+* {
+    /* font-family: 'Salsa', cursive, 'Inter', sans-serif ,'Cabin'; */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--backgroundColor);
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: var(--mainYellow);
+    position: fixed;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    outline: none;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 60px;
+    min-height: 60px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+    z-index: 1000;
+}
+
+.header nav {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header nav a img {
+    max-width: 140px;
+}
+
+.btnProfile {
+    color: var(--txtclr);
+    background: var(--mainGradient);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    max-width: 115px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.5s ease-out;
+}
+
+.btnProfile:hover {
+    background: var(--HoverGradient);
+    transform: scale(1.07);
+}
+
+
+.btnProfile i {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.btnProfile .loginout {
+    display: none;
+    position: absolute;
+    background: var(--lightOrange);
+    max-width: 200px;
+    min-width: 200px;
+    padding: 15px 9px;
+    border-radius: 10px;
+    max-height: 155px;
+    text-align: right;
+    transition: 0.5s;
+}
+
+.btnProfile .loginout a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'inter', sans-serif !important;
+    font-size: 18px;
+}
+
+.btnProfile .loginout li {
+    list-style: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btnProfile:hover .loginout {
+    display: block;
+    margin-top: 2px;
+    margin-left: -55px;
+}
+
+.btnProfile:hover .loginout h3 {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Salsa', cursive;
+    text-transform: capitalize;
+}
+
+.body {
+    min-height: 100vh;
+    max-width: 50vw;
+    min-width: 50vw;
+    position: relative;
+    padding: 65px 15px 65px 15px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.body h2 {
+    font-size: 1.5rem;
+    font-family: 'Salsa', cursive;
+    color: var(--mainOrange);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.body form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body form #SearchLink {
+    min-width: 400px;
+    font-size: 1.2rem;
+    color: var(--lightOrange);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    outline: none;
+    border: none;
+    border-top: 2px solid var(--lightOrange);
+    border-left: 2px solid var(--lightOrange);
+    border-bottom: 2px solid var(--lightOrange);
+    height: 45px;
+    padding: 7px 10px 7px 20px;
+    border-radius: 50px 0px 0px 50px !important;
+    margin: 5px 0px 5px 0px;
+    position: relative;
+}
+
+.body form .SearchBtn {
+    min-width: 55px;
+    height: 45px;
+    padding: 5px;
+    margin: 5px 5px 5px 0px;
+    font-weight: 900;
+    font-size: 1.2em;
+    background: var(--mainGradient);
+    color: var(--txtclr);
+    border: var(--lightOrange);
+    border: none;
+    outline: none;
+    border-radius: 0px 50px 50px 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.linkContainer {
+    background-color: var(--mainYellow);
+    padding: 15px 7px 15px 15px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.linkContainer h2 {
+    font-size: 1.6rem;
+    font-family: 'Salsa', cursive;
+    color: var(--mainOrange);
+    font-weight: 400;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.linkContainer h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    position: absolute;
+    background-color: var(--mainOrange);
+    left: 0;
+    bottom: -5px;
+}
+
+.linkContainer h4 {
+    font-size: 1rem;
+    font-family: 'Salsa', cursive;
+    color: var(--linkUrlColor);
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.linkContainer .btnContainer {
+    padding: 5px 10px;
+    font-family: 'Cabin', sans-serif !important;
+    text-decoration: none;
+    max-width: 65px !important;
+    min-width: 65px !important;
+}
+
+
+
+
+.footer {
+    background: var(--mainYellow);
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    min-height: 60px;
+    max-height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 0;
+}
+
+.footer .foot {
+    width: 50%;
+    min-height: 60px;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background: var(--mainGradient);
+    color: var(--txtclr);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.btn:hover {
+    background: var(--HoverGradient);
+    transform: scale(1.1);
+}
+
+.footer .foot>.btn {
+    width: 30%;
+    height: 40px;
+    font-size: 1.2rem;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.footer .foot>.btn:last-child {
+    margin-left: 25px;
+}
+
+
+
+
+
+
+
+
+/* ------------------------------ css for doing responsive ----------------------- */
+
+
+@media only screen and (max-width: 800px) {
+    nav {
+        min-width: 100%;
+        padding: 0px 10px;
+    }
+
+    nav img {
+        width: 105px;
+    }
+
+    .btnProfile {
+        min-width: 100px;
+        max-width: 100px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .btnProfile:hover {
+        background: var(--HoverGradient);
+        transform: none;
+    }
+
+    .btnProfile .loginout {
+        display: none;
+        position: absolute;
+        background: var(--lightOrange);
+        max-width: 150px;
+        min-width: 100px;
+        padding: 15px;
+        border-radius: 10px;
+        max-height: 155px;
+        text-align: right;
+        transition: 0.5s;
+    }
+
+    .btnProfile .loginout a {
+        font-size: 14px;
+    }
+
+    .btnProfile:hover .loginout h3 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .body form #SearchLink {
+        min-width: 250px;
+        font-size: 1.05rem;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        outline: none;
+        border: none;
+        border-top: 2px solid var(--lightOrange);
+        border-left: 2px solid var(--lightOrange);
+        border-bottom: 2px solid var(--lightOrange);
+        height: 45px;
+        padding: 7px 10px 7px 20px;
+        border-radius: 50px 0px 0px 50px !important;
+        background-color: transparent;
+        margin: 5px 0px 5px 0px;
+        position: relative;
+    }
+
+    .linkContainer {
+        background-color: var(--mainYellow);
+        padding: 15px 7px 15px 15px;
+        width: 100%;
+        position: relative;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    .foot {
+        min-width: 100%;
+        justify-content: center;
+        padding: 0px 15px;
+    }
+
+    .body {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .btn:hover {
+        background: var(--HoverGradient);
+        transform: none;
+    }
+
+    .foot>.btn {
+        min-width: 50%;
+        max-width: 50%;
+        margin: 0px 0px;
+        min-height: 45px;
+        font-weight: 400;
+    }
+
+    .foot>.btn:last-child {
+        margin: 0;
+        margin-left: 10px !important;
+    }
+}

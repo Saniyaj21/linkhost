@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver - Now you can save links with no irritation .</title>
+    <meta name="theme-color" content="#fdf2b9">
+    <meta name="msapplication-navbutton-color" content="#FDF2B9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FDF2B9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./style/icon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./style/icon.png">
+</head>
+
+<body>
+
+    <!-- navigation bar starts -->
+    <header class="header">
+        <nav>
+            <a href="/"><img src="{% static 'style/Link Saver.svg' %}" alt="Logo"></a>
+            <div class="btnProfile"><i class="fa-solid fa-user"></i>Name
+                <ul class="loginout">
+                    <a href="#">
+                        <li>
+                            <h3>{{user.username|upper}}</h3>
+                        </li>
+                    </a>
+
+
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>Log Out</li>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}">
+                        <li><i class="fa-solid fa-right-to-bracket"></i>Log In</li>
+                    </a>
+                    {%endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- navigation bar starts -->
+
+    <!-- main body starts  -->
+    <section class="body">
+        <h2>Search links :</h2>
+        <form action=""  method="GET">
+            {% csrf_token %}
+            <input type="text" name="q" id="SearchLink" placeholder="Seach">
+            <button class="SearchBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        {% for message  in messages %}
+        {{message}}
+        {% endfor %}
+        
+
+            {% block body%}
+
+            {% endblock body%}
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+        <h2>Your links :</h2>
+        <div class="linkContainer">
+            <h2 class="linkTitle">Link Title</h2>
+            <h4 class="linkAddr">https:://www.linksaver.in/home/new/user/login/</h4>
+            <a href="#" class="btn btnContainer"><i class="fa-brands fa-internet-explorer"></i> Visit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-pen-to-square"></i> Edit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-trash"></i> Delete</a>
+        </div>
+
+        <div class="linkContainer">
+            <h2 class="linkTitle">Link Title</h2>
+            <h4 class="linkAddr">https:://www.linksaver.in/home/new/user/login/</h4>
+            <a href="#" class="btn btnContainer"><i class="fa-brands fa-internet-explorer"></i> Visit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-pen-to-square"></i> Edit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-trash"></i> Delete</a>
+        </div>
+
+        <div class="linkContainer">
+            <h2 class="linkTitle">Link Title</h2>
+            <h4 class="linkAddr">https:://www.linksaver.in/home/new/user/login/</h4>
+            <a href="#" class="btn btnContainer"><i class="fa-brands fa-internet-explorer"></i> Visit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-pen-to-square"></i> Edit Link</a>
+            <a href="#" class="btn btnContainer"><i class="fa-solid fa-trash"></i> Delete</a>
+        </div>
+
+
+    </section> -->
+</section>
+   
+
+
+    <!-- Footer starts  -->
+    <footer class="footer">
+        <div class="foot">
+            <a href="/" class="btn"><i class="fa-solid fa-eye"></i>&nbsp; Show links</a>
+            <a href="{% url 'createlink' %}" class="btn"><i class="fa-solid fa-floppy-disk"></i>&nbsp; Save link</a>
+        </div>
+    </footer>
+    <!-- Footer ends -->
+
+
+</body>
+
+</html>
